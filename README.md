@@ -56,3 +56,8 @@ Children:
 -	View the summary of a course.
 -	Add the course to favorites.
 -	view the course.
+
+
+Project Planning Diagram: 
+
+https://www.figma.com/file/uVcP4W3L18ATAmFKicTm5F/Clever-Child?node-id=0%3A1
