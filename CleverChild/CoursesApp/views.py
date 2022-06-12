@@ -5,10 +5,13 @@ from rest_framework import status
 from .models import Course
 from .serializers import CourseSerializer
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAuthenticated
 
 
 @api_view(['POST'])
 @authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
 def add_course(request: Request):
     # only authenticated users can add a course.
     # Need to write code for (admin/specialists has permission)
@@ -44,6 +47,7 @@ def display_courses(request: Request):
 
 @api_view(['DELETE'])
 @authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
 def delete_course(request: Request, course_id):
     # only authenticated users can delete a course.
     # Need to write code for (admin has permission)
@@ -60,6 +64,7 @@ def delete_course(request: Request, course_id):
 
 @api_view(['PUT'])
 @authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
 def update_course(request: Request, course_id):
     if not request.user.is_authenticated:
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
