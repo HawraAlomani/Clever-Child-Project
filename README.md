@@ -47,7 +47,7 @@ Parents (Grown-ups):
 -	View all courses.
 -	Add/ Delete courses to their child’s account.
 -	Track their children’s progress in the course.
--       View the area of subscribed courses of their children.
+-	View the area of subscribed courses of their children.
 -	View the area of favorite courses.
 
 Children:
