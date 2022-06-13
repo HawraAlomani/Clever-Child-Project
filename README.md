@@ -53,7 +53,7 @@ Parents (Grown-ups):
 Children:
 -	Select their age. 
 -	View a list of courses based on category.
--	View another list of courses based on subscription. 
+-	View another list of courses based on subscriptions. 
 -	View the summary of a course.
 -	Add the course to favorites. 
 -	view the course.
