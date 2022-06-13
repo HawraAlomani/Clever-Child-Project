@@ -5,18 +5,58 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import AccessToken
-from .serializers import UserRegisterSerializer
+from .serializers import UserRegisterSerializer, ParentSerializer, ChildSerializer, SpecialistSerializer
+from .models import *
 
 
 # to create a user account
 @api_view(['POST'])
 def register_user(request: Request):
     user_serializer = UserRegisterSerializer(data=request.data)
+
     if user_serializer.is_valid():
         new_user = User.objects.create_user(**user_serializer.data)
         new_user.save()
+
+        if 'profile' in request.query_params:
+            if request.query_params["profile"] == "parent":
+                parentProfile = Parent(user=new_user, birth_date=request.data["birth_date"],
+                                       country=request.data["country"],
+                                       phone_number=request.data["phone_number"])
+                parentProfile.save()
+                data = {
+                    "msg": "Created a parent account successfully.",
+
+                }
+                return Response(data)
+            elif request.query_params["profile"] == "child":
+                childProfile = Child(user=new_user, age=request.data["age"], interest=request.data["interest"],
+                                     parent=request.data[Parent.user]) # not sure what to fill here !!
+
+                # I want to pass username of parent
+
+                childProfile.save()
+                data = {
+                    "msg": "Created a child account successfully."
+                }
+                return Response(data)
+            elif request.query_params["profile"] == "specialist":
+                specialistProfile = Specialist(user=new_user, specialization=request.data["specialization"],
+                                               degree=request.data["degree"],
+                                               graduation_date=request.data["graduation_date"],
+                                               country=request.data["country"])
+                specialistProfile.save()
+                data = {
+                    "msg": "Created a specialist account successfully."
+                }
+                return Response(data)
+            else:
+                data = {
+                    "msg": "Created a general user account successfully."
+                }
+                return Response(data)
         data = {
-            "msg": "Created user successfully."
+            "msg": "Created a general user account successfully."
         }
         return Response(data)
     else:

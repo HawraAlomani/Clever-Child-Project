@@ -5,7 +5,7 @@ from django_countries.fields import CountryField
 
 # customized model for users of type parent
 class Parent(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField()
     # to show list of countries (pip install django-countries)
     country = CountryField(blank=True)
@@ -14,16 +14,16 @@ class Parent(models.Model):
 
 # customized model for users of type child
 class Child(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     age = models.IntegerField()
     interest = models.TextField()
-    parent = models.ForeignKey(Parent, on_delete=models.CASCADE)
+    parent = models.ForeignKey(Parent, related_name="children", on_delete=models.CASCADE)
 
 
 # customized model for users of type specialist
 class Specialist(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    specialization = models.CharField(max_length=30,help_text="your study area.")
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    specialization = models.CharField(max_length=30, help_text="your study area.")
     degree_type = (
         ("1", "Diploma"),
         ("2", "Bachelor"),
@@ -33,3 +33,4 @@ class Specialist(models.Model):
     degree = models.CharField(max_length=80, choices=degree_type)
     graduation_date = models.DateField()
     country = CountryField(blank=True)
+
