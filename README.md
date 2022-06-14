@@ -4,7 +4,7 @@ Project Name: Clever Child
 
 Description/ Idea: 
 
-A simplified and interactive educational system explicitly designed to serve and educate children aged 3 and above about Computer and Electrical Engineering basic concepts such as Binary Code, Logic Gates, building circuits, and electronic components. Parents are part of this journey where they can observe and track their children’s progress in selective courses based on their child's area of interest.
+A simplified and interactive educational system explicitly designed to serve and educate children aged 5 and above about Computer and Electrical Engineering basic concepts such as Binary Code, Logic Gates, building circuits, and electronic components. Parents are part of this journey where they can observe and track their children’s progress in selective courses based on their child's area of interest.
 
 Inspiration:
 
@@ -17,10 +17,10 @@ Throughout my college years and while I was learning some computer/electrical en
 
 List of Services/ Features:
 
-•	Provide interactive EE/CPE/CS courses based on children's age.
+•	Provide interactive EE/CPE/CS courses based on children's age and area of interest.
 •	Parents, Specialists, and children have different features.
 •	Specialists can share courses based on their area of specialization.
-•	Parents can add desired courses to their children's list of courses.
+•	Parents can add desired courses to their children's list of courses by making subscription to courses.
 •	Children view the list of courses.
 •	Courses may contain videos, images, and a way of interaction.
 
@@ -32,31 +32,36 @@ Type of users: Admin, Content Creators, Parents, Children.
 Admin: 
 -	Create, Read, Update, Delete Content Creators.
 -	Create, Read, Update, Delete courses.
+-	Create, Read, Update, Delete courses subscriptions.
 -	Create, Read, Update, Delete Parents.
 -	Create, Read, Update, Delete Children.
 	
 Content Creators (Specialists):
--	Make an order to become a content creator (must be sent to the admin).
+-	Make an order to become a content creator (register as specialist).
 -	Add, read, update, delete their courses.
 -	View the progress of each child in their courses.
 -	View all other courses from other specialists. 
--	Write suggestions to other specialists to improve their content. 
--	Interact with the parents.
+-	Future plans:
+		- Write suggestions to other specialists to improve their content. 
+		- Interact with the parents.
 
 Parents (Grown-ups):
 -	View all courses.
--	Add/ Delete courses to their child’s account.
+-	Add/Delete courses to their child’s account by making subscription to the course.
 -	Track their children’s progress in the course.
 -	View the area of subscribed courses of their children.
--	View the area of favorite courses.
+-	Future plans:
+		- View the area of favorite courses.
 
 Children:
 -	Select their age. 
 -	View a list of courses based on category.
 -	View another list of courses based on subscriptions. 
 -	View the summary of a course.
--	Add the course to favorites. 
 -	view the course.
+-	Future plans:
+		- Add the course to favorites. 
+	
 
 
 Project Planning Diagram: 
