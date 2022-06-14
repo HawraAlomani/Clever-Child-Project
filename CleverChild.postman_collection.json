@@ -1,0 +1,521 @@
+{
+	"info": {
+		"_postman_id": "0cce8084-1272-4f77-85d4-81fe9b5c9d79",
+		"name": "CleverChild",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21319679"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"hoordream1\",\n    \"email\":\"hoor@hotmail.com\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register as parent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Hawra\",\n    \"email\":\"ha@hotmail.com\",\n    \"password\":\"123456\",\n    \"birth_date\": \"1997-10-10\",\n    \"country\":\"SA\",\n    \"phone_number\": \"0539380518\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/register/?profile=parent",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register",
+								""
+							],
+							"query": [
+								{
+									"key": "profile",
+									"value": "parent"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register as child",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"yousef\",\n    \"email\":\"yousef@hotmail.com\",\n    \"password\":\"123\",\n    \"age\": \"2\",\n    \"interest\":\"Computer Science\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/register/?profile=child&parent_id=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register",
+								""
+							],
+							"query": [
+								{
+									"key": "profile",
+									"value": "child"
+								},
+								{
+									"key": "parent_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register as specialist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Sarah\",\n    \"email\":\"sarah@hotmail.com\",\n    \"password\":\"1235\",\n    \"specialization\": \"Computer Science\",\n    \"degree\":\"2\",\n    \"graduation_date\":\"2015-10-10\",\n    \"country\": \"SA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/register/?profile=specialist",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register",
+								""
+							],
+							"query": [
+								{
+									"key": "profile",
+									"value": "specialist"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login as parent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Rabae\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login as child",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"yousef\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login as specialist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Sarah\",\n    \"password\":\"1235\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "add course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1MjQyMTc4LCJpYXQiOjE2NTUyNDE4NzgsImp0aSI6IjdhOGZmZGY3ZGRkODQxOTdhNjdhZjY5MWM4NWNjM2Y3IiwidXNlcl9pZCI6Nn0.zwwIzS848lUvXUW7yEL2bs65EdFez-h4-L4EmKhf3DE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Introduction to circuits\",\n    \"description\":\"We are going to learn how to build a circuit.\",\n    \"added_by\":\"Sara\",\n    \"category\":\"EE\",\n    \"video\":\"https://www.youtube.com/watch?v=Z1oUcsIb9GU\",\n    \"image\":\"https://www.schoolphysics.co.uk/age16-19/Electronics/Logic%20gates/text/Logic_gates/index.html\",\n    \"summary\":\"We learned today how to build a simple circuit with only wires, battery, resistor, and LED. By building the circuit, we reached our goal of making the LED lights up.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/course/add/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"add",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "display all courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/course/display_courses/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"display_courses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update course",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1MjQxNTY2LCJpYXQiOjE2NTUyNDEyNjYsImp0aSI6IjlkMzFlOGQ0MjBlYzQyNjBhMzQwMTA2ZDIzNjY4ZDJjIiwidXNlcl9pZCI6Nn0.w7gwx2KDB2cs4iOUSR0wLAGDG5i7ywgqx1Zsde6t0C0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n \"title\": \"Introduction to logic gates course (updated)\",\n\"description\": \"We are going to learn about the seven basic logic gates.\",\n\"added_by\": \"Hawra Alomani\",\n\"category\": \"CPE\",\n\"video\": \"https://www.youtube.com/watch?v=Z1oUcsIb9GU\",\n\"image\": \"https://www.schoolphysics.co.uk/age16-19/Electronics/Logic%20gates/text/Logic_gates/index.html\",\n\"summary\": \"The basic logic gates are(AND, OR, XOR, NOT, NAND, NOR and XNOR).Logic gates are represented in tables called Truth Tables, containing the four cases where input can be either true (1) or false (0).\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/course/update/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1MjQxNTY2LCJpYXQiOjE2NTUyNDEyNjYsImp0aSI6IjlkMzFlOGQ0MjBlYzQyNjBhMzQwMTA2ZDIzNjY4ZDJjIiwidXNlcl9pZCI6Nn0.w7gwx2KDB2cs4iOUSR0wLAGDG5i7ywgqx1Zsde6t0C0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/course/delete/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course Subscription",
+			"item": [
+				{
+					"name": "add subscription by parent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1MjQyNDkzLCJpYXQiOjE2NTUyNDIxOTMsImp0aSI6ImM2ZmZmZmZjZWViYzQ2YmNhM2M3NDU4YWVjNDY1ZWQ3IiwidXNlcl9pZCI6M30.kFTPUa5fi036tEwYoNWuhqX1X5pT3oV7NJOwZ4TuGvM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"course\":\"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/course/subscribe/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"subscribe",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "display child's subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1MjQyNDkzLCJpYXQiOjE2NTUyNDIxOTMsImp0aSI6ImM2ZmZmZmZjZWViYzQ2YmNhM2M3NDU4YWVjNDY1ZWQ3IiwidXNlcl9pZCI6M30.kFTPUa5fi036tEwYoNWuhqX1X5pT3oV7NJOwZ4TuGvM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/course/display_subscriptions/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"display_subscriptions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete subscription by parent",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1MjQyNDkzLCJpYXQiOjE2NTUyNDIxOTMsImp0aSI6ImM2ZmZmZmZjZWViYzQ2YmNhM2M3NDU4YWVjNDY1ZWQ3IiwidXNlcl9pZCI6M30.kFTPUa5fi036tEwYoNWuhqX1X5pT3oV7NJOwZ4TuGvM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/course/unsubscribe/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"course",
+								"unsubscribe",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update subscription info (future)",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
