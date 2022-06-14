@@ -12,6 +12,14 @@ from .models import *
 # to create a user account
 @api_view(['POST'])
 def register_user(request: Request):
+    """
+      - A function to register users
+      - It checks if it is a normal user, parent, child, or specialist.
+      - Creates a user account, and a profile of the specific type.
+
+        :param request:
+        :return: a message of the type of registered account, or the status of creating a user.
+    """
     user_serializer = UserRegisterSerializer(data=request.data)
 
     if user_serializer.is_valid():
@@ -70,6 +78,13 @@ def register_user(request: Request):
 # to login (access database and authenticate),then authenticated user will be given a token
 @api_view(['POST'])
 def login_user(request: Request):
+    """
+          - A function to login users
+          - It checks if username & password in database using authenticate, then provide a token.
+
+            :param request:
+            :return: a token is provided if successful.
+    """
     if 'username' in request.data and 'password' in request.data:
         user = authenticate(request, username=request.data['username'], password=request.data['password'])
         if user is not None:

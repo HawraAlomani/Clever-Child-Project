@@ -15,8 +15,15 @@ from rest_framework.permissions import IsAuthenticated
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 def add_course(request: Request):
-    # only authenticated users can add a course.
-    # (specialists has permission)
+    """
+- A function to add courses.
+- It checks for authentication (whether the user is logged in or not).
+- Only users who have permission can add a course.
+- Admin and Specialists have permission.
+
+    :param request:
+    :return: message of the status of operation, or the added course data.
+    """
     if not request.user.is_authenticated:
         return Response({"msg": "Not Allowed."}, status=status.HTTP_401_UNAUTHORIZED)
     if not request.user.has_perm('CoursesApp.add_course'):
@@ -40,6 +47,13 @@ def add_course(request: Request):
 
 @api_view(['GET'])
 def display_courses(request: Request):
+    """
+ - A function to display all courses.
+ - No permission or authentication is needed.
+
+     :param request:
+     :return: list of courses with course details.
+     """
     courses = Course.objects.all()
 
     dataResponse = {
@@ -53,6 +67,17 @@ def display_courses(request: Request):
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 def delete_course(request: Request, course_id):
+    """
+    - A function to delete courses.
+    - It checks for authentication (whether the user is logged in or not).
+    - Only users who have permission can delete a course.
+    - Admin and Specialists have permission.
+
+        :param course_id:
+        :param request:
+        :return: message of the status of operation, or if the course is deleted.
+    """
+
     # only authenticated users can delete a course.
     if not request.user.is_authenticated:
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
@@ -71,6 +96,16 @@ def delete_course(request: Request, course_id):
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 def update_course(request: Request, course_id):
+    """
+    - A function to update course information.
+    - It checks for authentication (whether the user is logged in or not).
+    - Only users who have permission can update a course.
+    - Admin and Specialists have permission.
+
+        :param course_id:
+        :param request:
+        :return: message of the status of operation, or a message that the course is updated.
+    """
     if not request.user.is_authenticated:
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
 
@@ -97,6 +132,16 @@ def update_course(request: Request, course_id):
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 def subscribe(request: Request, sub_id):
+    """
+        - A function to subscribe to a course.
+        - It checks for authentication (whether the user is logged in or not).
+        - Only users who have permission can subscribe to a course.
+        - Admin and Parent have permission.
+
+            :param sub_id:
+            :param request:
+            :return: message of the status of operation, or the course is subscribed with its information.
+    """
     # only authenticated users can subscribe.
     if not request.user.is_authenticated:
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
@@ -128,6 +173,16 @@ def subscribe(request: Request, sub_id):
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 def unsubscribe(request: Request, sub_id):
+    """
+           - A function to unsubscribe to a course.
+           - It checks for authentication (whether the user is logged in or not).
+           - Only users who have permission can unsubscribe to a course.
+           - Admin and Parent have permission.
+
+               :param sub_id:
+               :param request:
+               :return: message of the status of operation, or a message that the course is unsubscribed.
+    """
     if not request.user.is_authenticated:
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
     if not request.user.has_perm('CoursesApp.delete_coursesubscription'):
@@ -145,6 +200,15 @@ def unsubscribe(request: Request, sub_id):
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 def view_all_subscriptions(request: Request):
+    """
+           - A function to view all subscribed courses.
+           - It checks for authentication (whether the user is logged in or not).
+           - Only users who have permission can view subscribed courses.
+           - Admin, Parent, and Child have permission.
+
+               :param request:
+               :return: all subscribed courses and their information.
+    """
     sub_courses = CourseSubscription.objects.all()
 
     dataResponse = {
@@ -158,4 +222,14 @@ def view_all_subscriptions(request: Request):
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 def edit_subscription(request: Request, sub_id):
+    """
+        - A function to edit subscribed courses (progress).
+        - It checks for authentication (whether the user is logged in or not).
+        - Only users who have permission can edit subscribed courses (progress).
+        - Admin, Parent, and Child have permission.
+
+            :param sub_id:
+            :param request:
+            :return: updated subscribed courses information such as progress.
+    """
     pass
