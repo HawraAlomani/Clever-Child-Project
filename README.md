@@ -16,13 +16,12 @@ Throughout my college years and while I was learning some computer/electrical en
 
 
 List of Services/ Features:
-
-•	Provide interactive EE/CPE/CS courses based on children's age and area of interest.
-•	Parents, Specialists, and children have different features.
-•	Specialists can share courses based on their area of specialization.
-•	Parents can add desired courses to their children's list of courses by making subscription to courses.
-•	Children view the list of courses.
-•	Courses may contain videos, images, and a way of interaction.
+- Provide interactive EE/CPE/CS courses based on children's age and area of interest.
+- Parents, Specialists, and children have different features.
+- Specialists can share courses based on their area of specialization.
+- Parents can add desired courses to their children's list of courses by making subscription to courses.
+- Children view the list of courses.
+- Courses may contain videos, images, and a way of interaction.
 
 
 User Stories
