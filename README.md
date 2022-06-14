@@ -42,8 +42,8 @@ Content Creators (Specialists):
 -	View the progress of each child in their courses.
 -	View all other courses from other specialists. 
 -	Future plans:
-		- Write suggestions to other specialists to improve their content. 
-		- Interact with the parents.
+-	- Write suggestions to other specialists to improve their content. 
+-	- Interact with the parents.
 
 Parents (Grown-ups):
 -	View all courses.
@@ -51,7 +51,7 @@ Parents (Grown-ups):
 -	Track their children’s progress in the course.
 -	View the area of subscribed courses of their children.
 -	Future plans:
-		- View the area of favorite courses.
+-	- View the area of favorite courses.
 
 Children:
 -	Select their age. 
@@ -60,7 +60,7 @@ Children:
 -	View the summary of a course.
 -	view the course.
 -	Future plans:
-		- Add the course to favorites. 
+-	- Add the course to favorites. 
 	
 
 
