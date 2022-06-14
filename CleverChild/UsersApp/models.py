@@ -11,6 +11,9 @@ class Parent(models.Model):
     country = CountryField(blank=True)
     phone_number = models.CharField(max_length=10)
 
+    def __str__(self):
+        return self.user.username
+
 
 # customized model for users of type child
 class Child(models.Model):
@@ -18,6 +21,9 @@ class Child(models.Model):
     age = models.IntegerField()
     interest = models.TextField()
     parent = models.ForeignKey(Parent, related_name="children", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
 
 
 # customized model for users of type specialist
@@ -34,3 +40,5 @@ class Specialist(models.Model):
     graduation_date = models.DateField()
     country = CountryField(blank=True)
 
+    def __str__(self):
+        return self.user.username

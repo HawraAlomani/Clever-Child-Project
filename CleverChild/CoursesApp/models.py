@@ -33,8 +33,14 @@ class CourseSubscription(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     progress = models.IntegerField(default=0, validators=[MaxValueValidator(100), MinValueValidator(0)])
 
+    def __str__(self):
+        return self.course.title
+
 
 # model for favorite courses
 class FavoriteCourses(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.course.title

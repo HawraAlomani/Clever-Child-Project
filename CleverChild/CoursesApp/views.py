@@ -16,7 +16,7 @@ from rest_framework.permissions import IsAuthenticated
 @permission_classes([IsAuthenticated])
 def add_course(request: Request):
     # only authenticated users can add a course.
-    # Need to write code for (admin/specialists has permission)
+    # (specialists has permission)
     if not request.user.is_authenticated:
         return Response({"msg": "Not Allowed."}, status=status.HTTP_401_UNAUTHORIZED)
     if not request.user.has_perm('CoursesApp.add_course'):
@@ -96,14 +96,14 @@ def update_course(request: Request, course_id):
 @api_view(['POST'])
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
-def subscribe(request: Request, title):
+def subscribe(request: Request, sub_id):
     # only authenticated users can subscribe.
     if not request.user.is_authenticated:
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
-    if not request.user.has_perm('CoursesApp.subscribe'):
+    if not request.user.has_perm('CoursesApp.add_coursesubscription'):
         return Response({"msg": "Not Allowed, you don't have permission."}, status=status.HTTP_401_UNAUTHORIZED)
-    # if the course is in courses list, then it can be added to subscribe list.
-    course = Course.objects.filter(title=title)
+    # if the course id is in courses list, then it can be added to subscribe list.
+    course = Course.objects.filter(id=sub_id)
     if course.exists():
         request.data["user"] = request.user.id
         new_sub = CourseSubscriptionSerializer(data=request.data)
@@ -130,7 +130,7 @@ def subscribe(request: Request, title):
 def unsubscribe(request: Request, sub_id):
     if not request.user.is_authenticated:
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
-    if not request.user.has_perm('CoursesApp.unsubscribe'):
+    if not request.user.has_perm('CoursesApp.delete_coursesubscription'):
         return Response({"msg": "Not Allowed, you don't have permission."}, status=status.HTTP_401_UNAUTHORIZED)
     request.data["user"] = request.user.id
     course_sub = CourseSubscription.objects.get(id=sub_id)
@@ -141,7 +141,6 @@ def unsubscribe(request: Request, sub_id):
     return Response(data)
 
 
-# done
 @api_view(['GET'])
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])

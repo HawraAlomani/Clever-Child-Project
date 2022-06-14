@@ -17,7 +17,7 @@ Throughout my college years and while I was learning some computer/electrical en
 
 List of Services/ Features:
 
-•	Provide interactive EE/CPE courses based on children's age.
+•	Provide interactive EE/CPE/CS courses based on children's age.
 •	Parents, Specialists, and children have different features.
 •	Specialists can share courses based on their area of specialization.
 •	Parents can add desired courses to their children's list of courses.
@@ -47,14 +47,15 @@ Parents (Grown-ups):
 -	View all courses.
 -	Add/ Delete courses to their child’s account.
 -	Track their children’s progress in the course.
+-	View the area of subscribed courses of their children.
 -	View the area of favorite courses.
 
 Children:
--	Select their age.
--	View a list of courses based on age.
--	View another list of courses added by their parents.
+-	Select their age. 
+-	View a list of courses based on category.
+-	View another list of courses based on subscriptions. 
 -	View the summary of a course.
--	Add the course to favorites.
+-	Add the course to favorites. 
 -	view the course.
 
 

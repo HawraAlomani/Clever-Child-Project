@@ -76,8 +76,11 @@ WSGI_APPLICATION = 'CleverChild.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cleverchilddb',
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'localhost'
     }
 }
 

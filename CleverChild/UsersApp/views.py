@@ -30,11 +30,11 @@ def register_user(request: Request):
                 }
                 return Response(data)
             elif request.query_params["profile"] == "child":
+                parent_id = request.query_params.get("parent_id", None)
+                if parent_id is None:
+                    return Response({"msg": "you must provide parent id"})
                 childProfile = Child(user=new_user, age=request.data["age"], interest=request.data["interest"],
-                                     parent=request.data[Parent.user]) # not sure what to fill here !!
-
-                # I want to pass username of parent
-
+                                     parent=Parent.objects.get(id=parent_id))
                 childProfile.save()
                 data = {
                     "msg": "Created a child account successfully."
