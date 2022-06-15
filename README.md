@@ -61,7 +61,8 @@ Children:
 -	Future plans:
 -	- Add the course to favorites. 
 	
-
+Deployment:
+https://clever-child-project2.herokuapp.com/
 
 Project Planning Diagram: 
 
